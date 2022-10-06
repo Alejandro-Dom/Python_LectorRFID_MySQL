@@ -6,7 +6,7 @@ cnx = mysql.connector.connect(user = 'alex', password = '4892', host = '127.0.0.
 
 #Cursor
 cursor = cnx.cursor() 
-insertquery = "INSERT INTO rfid (nombre,texto,rfid) VALUES ('Alex Domínguez' 'Test Python 1','93110192');"
+insertquery = ("INSERT INTO rfid (nombre,texto,rfid) VALUES ('Alex','Test Python 2',50986321);")
 
 #Ejecutar cursor
 cursor.execute(insertquery)
