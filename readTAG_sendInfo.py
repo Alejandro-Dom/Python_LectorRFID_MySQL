@@ -18,7 +18,7 @@ try:
         print("Acerta el TAG al lector")
         id, text = reader.read()
         print("ID: %s\nText: %s" % (id,text))
-        insertquery = "INSERT INTO rfid (nombre,texto,rfid) VALUES ('Alex',"+ text+","+ str(id)+");"
+        insertquery = ("INSERT INTO rfid (nombre,texto,rfid) VALUES ('Alex','%s','%s');"%(text,id))
         cursor.execute(insertquery)
         cnx.commit()
         print("La operación del Query fue exitosa")
