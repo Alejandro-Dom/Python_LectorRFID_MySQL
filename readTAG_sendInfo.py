@@ -15,17 +15,17 @@ cursor = cnx.cursor()
 try:
     #Leer el tag
     while True:
-        print("Hold a tag near the reader")
+        print("Acerta el TAG al lector")
         id, text = reader.read()
         print("ID: %s\nText: %s" % (id,text))
-        insertquery = ("INSERT INTO rfid (nombre,texto,rfid) VALUES ('Alex','%s','%s');"%(text,id))
+        insertquery = "INSERT INTO rfid (nombre,texto,rfid) VALUES ('Alex',"+ text+","+ str(id)+");"
         cursor.execute(insertquery)
         cnx.commit()
         print("La operación del Query fue exitosa")
-        #Cerrar
-        cursor.close()
-        cnx.close()
-        sleep(10)
+        
+        sleep(5)
 except KeyboardInterrupt:
+    cursor.close()
+    cnx.close()
     GPIO.cleanup()
     raise
