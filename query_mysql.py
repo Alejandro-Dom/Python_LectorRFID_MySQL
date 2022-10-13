@@ -2,10 +2,10 @@
 import mysql.connector
 
 #Conexión
-cnx = mysql.connector.connect(user='alex', password='4892', host = '127.0.0.1', database = 'detector_sintomas')
+cnx = mysql.connector.connect(user='alexlocal', password='48992', host = '127.0.0.1', database = 'codigoIoT')
 cursor = cnx.cursor()
 
-query = ("SELECT id, nombre, temp FROM registro WHERE nombre = 'Alejandro Dominguez';")
+query = ("SELECT * FROM rfid WHERE id=17;")
 cursor.execute(query)
 
 res = cursor.fetchall()
