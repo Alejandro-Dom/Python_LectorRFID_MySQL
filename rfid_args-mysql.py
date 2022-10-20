@@ -22,6 +22,7 @@ cursor = cnx.cursor()
 #Cuerpo del programa
 try:
     #Hacer lectura unica
+    print("Acerca el Tag al sensor")
     id, text = reader.read()
     sttr = text.split(",")
     sleep(1)
